@@ -1,0 +1,25 @@
+$ NODE_OPTIONS=--experimental-vm-modules jest -u --coverage
+--------------------------|---------|----------|---------|---------|-------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------------|---------|----------|---------|---------|-------------------
+All files                 |    22.8 |        0 |   21.05 |      26 |                   
+ components               |       0 |        0 |       0 |       0 |                   
+  index.ts                |       0 |        0 |       0 |       0 |                   
+ components/appComponents |      30 |        0 |   33.33 |    37.5 |                   
+  AppScreen.tsx           |     100 |      100 |     100 |     100 |                   
+  Notes.tsx               |   22.22 |        0 |      20 |   28.57 | 17-24             
+ components/base          |      40 |      100 |      50 |      40 |                   
+  Icon.tsx                |     100 |      100 |     100 |     100 |                   
+  Input.tsx               |      25 |      100 |       0 |      25 | 22-27             
+ constants                |     100 |      100 |     100 |     100 |                   
+  index.ts                |     100 |      100 |     100 |     100 |                   
+ hoc                      |      40 |        0 |   33.33 |      40 |                   
+  withReactHookForm.tsx   |      40 |        0 |   33.33 |      40 | 49-59             
+ recoils                  |     100 |      100 |     100 |     100 |                   
+  index.ts                |       0 |        0 |       0 |       0 |                   
+  persistedAtom.ts        |     100 |      100 |     100 |     100 |                   
+ utils                    |    3.12 |        0 |       0 |     3.7 |                   
+  biometrics.ts           |       0 |        0 |       0 |       0 | 16-69             
+  index.ts                |   14.28 |        0 |       0 |   16.66 | 16-35             
+--------------------------|---------|----------|---------|---------|-------------------
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

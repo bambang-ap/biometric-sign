@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notes Component Notes snapshot 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "borderBottomColor": "#000",
+      "borderBottomLeftRadius": 8,
+      "borderBottomRightRadius": 8,
+      "borderBottomWidth": 1,
+      "borderLeftColor": "#000",
+      "borderLeftWidth": 1,
+      "borderRightColor": "#000",
+      "borderRightWidth": 1,
+      "borderTopColor": "#000",
+      "borderTopLeftRadius": 8,
+      "borderTopRightRadius": 8,
+      "borderTopWidth": 1,
+      "marginBottom": 8,
+      "opacity": 1,
+      "paddingBottom": 8,
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 8,
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "flexBasis": "0%",
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+        {
+          "marginBottom": 16,
+        },
+      ]
+    }
+  >
+    <Text
+      ellipsizeMode="clip"
+      numberOfLines={1}
+      style={
+        [
+          {
+            "fontWeight": "700",
+          },
+          {
+            "fontSize": 18,
+            "lineHeight": 28,
+          },
+        ]
+      }
+    >
+      title
+    </Text>
+    <Text
+      style={
+        [
+          {
+            "textAlign": "justify",
+          },
+        ]
+      }
+    >
+      Lorem
+    </Text>
+  </View>
+  <View
+    style={
+      [
+        {
+          "flexDirection": "row",
+        },
+        {
+          "alignItems": "center",
+        },
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      onPress={[Function]}
+      selectable={false}
+      style={
+        [
+          {
+            "color": undefined,
+            "fontSize": 12,
+          },
+          [
+            {
+              "fontSize": 14,
+              "lineHeight": 20,
+            },
+          ],
+          {
+            "fontFamily": "FontAwesome5Free-Solid",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          {
+            "fontWeight": "900",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      numberOfLines={1}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "textAlign": "right",
+          },
+          {
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      20-10-2023 22:30:25
+    </Text>
+  </View>
+</View>
+`;

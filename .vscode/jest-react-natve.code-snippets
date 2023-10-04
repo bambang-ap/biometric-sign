@@ -1,0 +1,157 @@
+{
+  "Jest snippet": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rnTestUtils",
+    "description": "Jest snippet",
+    "body": [
+      "describe('${1:FileName}', () => {",
+      "\ttest('${2:method} defined correctly', () => {",
+      "\t\texpect($2()).to$3($4)",
+      "\t});",
+      "});"
+    ]
+  },
+  "Recoil Selector Jest snippet": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rnTestSelector",
+    "description": "Jest snippet",
+    "body": [
+      "import { snapshot_UNSTABLE, DefaultValue } from 'recoil';",
+      "describe('${1:SelectorName} selector', () => {",
+      "\ttest('$1 defined correctly', async () => {",
+      "\t\tconst initialSnapshot = snapshot_UNSTABLE();",
+      "",
+      "\t\texpect(initialSnapshot.getLoadable(${2:AtomName}).valueOrThrow()).toBe();",
+      "\t});",
+      "",
+      "\ttest('$1 DefaultValue', () => {",
+      "\t\tconst testSnapshotDefaultValue = snapshot_UNSTABLE(({set}) => {",
+      "\t\t\tset($1, new DefaultValue());",
+      "\t\t});",
+      "",
+      "\t\texpect(testSnapshotDefaultValue.getLoadable($2).valueOrThrow()).toEqual();",
+      "\t});",
+      "",
+      "\ttest('$1 can change value', () => {",
+      "\t\tconst testSnapshot = snapshot_UNSTABLE(({ set }) => {",
+      "\t\t\tset($1, ${3:params});",
+      "\t\t});",
+      "",
+      "\t\texpect(testSnapshot.getLoadable($2).valueOrThrow()).toEqual();",
+      "\t});",
+      "});"
+    ]
+  },
+  "React native jest snippet": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rnTest",
+    "description": "React native jest snippet",
+    "body": [
+      "import React from 'react';",
+      "import renderer from 'react-test-renderer';",
+      "import {render} from '@testing-library/react-native';",
+      "describe('${1:Description} $2${3:Component}', () => {",
+      "\ttest('$1 render correctly', () => {",
+      "\t\trender(<$1$4 />);",
+      "\t});",
+      "});"
+    ]
+  },
+  "React native jest snippet snapshot": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rnTestSnapshot",
+    "description": "React native jest snippet",
+    "body": [
+      "import React from 'react';",
+      "import renderer from 'react-test-renderer';",
+      "import {render} from '@testing-library/react-native';",
+      "describe('${1:Description} $2${3:Component}', () => {",
+      "\tconst TestComponent = () => <$1$4 />;",
+      "",
+      "\ttest('$1 render correctly', () => {",
+      "\t\trender(<TestComponent />);",
+      "\t});",
+      "",
+      "\ttest('$1 snapshot', () => {",
+      "\t\tconst wrapper = renderer.create(<TestComponent />).toJSON();",
+      "\t\texpect(wrapper).toMatchSnapshot();",
+      "\t});",
+      "});"
+    ]
+  },
+  "React native jest recoil snippet snapshot": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rnTestRecoil",
+    "description": "React native jest snippet",
+    "body": [
+      "import React from 'react';",
+      "import {render} from '@testing-library/react-native';",
+      "import renderer from 'react-test-renderer';",
+      "import RecoilRoot from '__mocks__/@components/recoiljs';",
+      "describe('${1:Description} $2${3:Component}', () => {",
+      "\tconst TestComponent = () => {",
+      "\t\treturn (",
+      "\t\t\t<RecoilRoot>",
+      "\t\t\t\t<$1$4 />",
+      "\t\t\t</RecoilRoot>",
+      "\t\t);",
+      "\t};",
+      "",
+      "\ttest('$1 render correctly', () => {",
+      "\t\trender(<TestComponent />);",
+      "\t});",
+      "",
+      "\ttest('$1 snapshot', () => {",
+      "\t\tconst wrapper = renderer.create(<TestComponent />).toJSON();",
+      "\t\texpect(wrapper).toMatchSnapshot();",
+      "\t});",
+      "});"
+    ]
+  },
+  "React native jest full snippet snapshot": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rnTestFull",
+    "description": "React native jest snippet",
+    "body": [
+      "import React from 'react';",
+      "import {render} from '@testing-library/react-native';",
+      "import renderer from 'react-test-renderer';",
+      "import FullMockComponent from '__mocks__/@components';",
+      "describe('${1:Description} $2${3:Component}', () => {",
+      "\tconst TestComponent = () => {",
+      "\t\treturn (",
+      "\t\t\t<FullMockComponent>",
+      "\t\t\t\t<$1$4 />",
+      "\t\t\t</FullMockComponent>",
+      "\t\t);",
+      "\t};",
+      "",
+      "\ttest('$1 render correctly', () => {",
+      "\t\trender(<TestComponent />);",
+      "\t});",
+      "",
+      "\ttest('$1 snapshot', () => {",
+      "\t\tconst wrapper = renderer.create(<TestComponent />).toJSON();",
+      "\t\texpect(wrapper).toMatchSnapshot();",
+      "\t});",
+      "});"
+    ]
+  },
+  "React native jest hooks testing": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rnTestHooks",
+    "description": "React native jest snippet",
+    "body": [
+      "import {renderHook} from '@testing-library/react-hooks';",
+      "",
+      "describe('use$1 Hooks', () => {",
+      "\ttest('Should defined well', async () => {",
+      "\t\tconst {result} = renderHook(() => use$1$2());",
+      "\t\tconst {$3} = result.current;",
+      "\t\t",
+      "\t\t$4",
+      "\t});",
+      "});"
+    ]
+  }
+}
