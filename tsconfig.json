@@ -19,9 +19,6 @@
       "@constants/*": [
         "./src/constants/*"
       ],
-      "@query": [
-        "./src/react-query"
-      ],
       "@hoc/*": [
         "./src/hoc/*"
       ],
@@ -30,9 +27,6 @@
       ],
       "@appComp/*": [
         "./src/components/appComponents/*"
-      ],
-      "@screenComp/*": [
-        "./src/components/screenComponents/*"
       ],
       "@navigators/*": [
         "./src/navigators/*"

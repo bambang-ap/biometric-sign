@@ -1,9 +1,9 @@
-import {TUser} from './data.type';
+import {TNotes} from './app.zod';
 
 export enum RootStackList {
-  Chats = 'Chats',
-  Chat = 'Chat',
-  UserInfo = 'UserInfo',
+  Auth = 'Auth',
+  Notes = 'Notes',
+  NoteDetail = 'NoteDetail',
 }
 
 export enum MenuList {
@@ -13,7 +13,7 @@ export enum MenuList {
 }
 
 export type RootStackParamList = {
-  [RootStackList.Chats]: undefined;
-  [RootStackList.Chat]: TUser;
-  [RootStackList.UserInfo]: TUser;
+  [RootStackList.Auth]: undefined;
+  [RootStackList.Notes]: undefined;
+  [RootStackList.NoteDetail]: TNotes;
 };

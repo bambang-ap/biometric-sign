@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput} from 'react-native';
+import {TextInput, View} from 'react-native';
 
 import {FieldValues} from 'react-hook-form';
 
@@ -18,15 +18,16 @@ function InputComponent<F extends FieldValues>(
   } = controller;
 
   return (
-    <TextInput
-      {...field}
-      multiline={multiline}
-      autoFocus={autoFocus}
-      value={value}
-      onChangeText={onChange}
-      className={className}
-      placeholder={placeholder}
-    />
+    <View className={className}>
+      <TextInput
+        {...field}
+        multiline={multiline}
+        autoFocus={autoFocus}
+        value={value}
+        onChangeText={onChange}
+        placeholder={placeholder}
+      />
+    </View>
   );
 }
 

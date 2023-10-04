@@ -2,7 +2,7 @@ import {PropsWithChildren} from 'react';
 
 import {FontAwesome5IconProps} from 'react-native-vector-icons/FontAwesome5';
 
-import {TChat, TUser} from './data.type';
+import {TNotes} from './app.zod';
 
 export type IconProps = Pick<FontAwesome5IconProps, 'onPress'> & {
   /**
@@ -14,14 +14,13 @@ export type IconProps = Pick<FontAwesome5IconProps, 'onPress'> & {
 
 export type AppScreenProps = PropsWithChildren<{className?: string}>;
 
-export type UserBubblesProps = {users: TUser[]};
+export type NotesProps = TNotes & {onPress?: NoopVoid};
 
-export type UserImageProps = TUser & {sizeClassName?: string};
-
-export type ChatBubbleProps = TChat;
-
-export type MessagesRef = {
-  scrollToIndex?: (index: number) => void;
+export type PromptOptions = {
+  onConfirm: NoopVoid;
+  onCancel?: NoopVoid;
+  cancelText?: string;
+  confirmText?: string;
 };
 
 export type InputProps = {

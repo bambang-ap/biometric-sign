@@ -1,4 +1,6 @@
-import * as React from 'react';
+import 'global-methods';
+
+import React from 'react';
 import {StatusBar} from 'react-native';
 
 import {
