@@ -1,39 +1,27 @@
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 
 import {FlashList} from '@shopify/flash-list';
+import {useRecoilValue} from 'recoil';
 
 import AppScreen from '@appComp/AppScreen';
 import Notes from '@appComp/Notes';
 import {TNotes} from '@appTypes/app.zod';
 import {RootStackList} from '@appTypes/navigators.type';
+import {Icon} from '@components';
+import {atomNotes} from '@recoils';
 import {useStackNavigation} from '@utils/navigators';
 
 export default function NotesScreen() {
+  const data = useRecoilValue(atomNotes);
   const {navigation} = useStackNavigation();
-
-  const data: TNotes[] = [
-    {
-      title: 'Note 1',
-      date: '2023-10-01 22:15:00',
-      notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta architecto natus, minus quibusdam quas expedita vel, magni sint iure dicta nemo, minima assumenda. Ad accusantium modi earum quae vero nisi.',
-    },
-    {
-      title: 'Note 2',
-      date: '2023-10-05 22:15:00',
-      notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta architecto natus, minus quibusdam quas expedita vel, magni sint iure dicta nemo, minima assumenda. Ad accusantium modi earum quae vero nisi.',
-    },
-    {
-      title: 'Note 3',
-      date: '2023-10-10 22:15:00',
-      notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta architecto natus, minus quibusdam quas expedita vel, magni sint iure dicta nemo, minima assumenda. Ad accusantium modi earum quae vero nisi.',
-    },
-  ];
 
   function navigate(notes: TNotes) {
     navigation.navigate(RootStackList.NoteDetail, notes);
+  }
+
+  function addNew() {
+    navigation.navigate(RootStackList.NoteDetail);
   }
 
   return (
@@ -44,6 +32,11 @@ export default function NotesScreen() {
           return <Notes {...item} onPress={() => navigate(item)} />;
         }}
       />
+      <TouchableOpacity
+        className="absolute bottom-5 right-5 w-14 h-14 bg-green-600 rounded-full items-center justify-center"
+        onPress={addNew}>
+        <Icon name="plus" className="text-white text-xl" />
+      </TouchableOpacity>
     </AppScreen>
   );
 }

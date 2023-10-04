@@ -8,24 +8,36 @@ import {
   ControlledComponentProps,
   withReactFormController,
 } from '@hoc/withReactHookForm';
+import {classNames} from '@utils/index';
 
 function InputComponent<F extends FieldValues>(
   props: ControlledComponentProps<F, InputProps>,
 ) {
-  const {controller, className, placeholder, autoFocus, multiline} = props;
+  const {
+    controller,
+    dClassName: className,
+    placeholder,
+    autoFocus,
+    multiline,
+  } = props;
   const {
     field: {value, onChange, ...field},
   } = controller;
 
   return (
-    <View className={className}>
+    <View
+      className={classNames(
+        'border border-black px-2 py-1 rounded-lg',
+        className,
+      )}>
       <TextInput
         {...field}
+        value={value}
         multiline={multiline}
         autoFocus={autoFocus}
-        value={value}
         onChangeText={onChange}
         placeholder={placeholder}
+        className="flex-1"
       />
     </View>
   );

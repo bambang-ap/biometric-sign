@@ -8,6 +8,9 @@ import {
   useNavigationContainerRef,
 } from '@react-navigation/native';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import ReactNativeRecoilPersist, {
+  ReactNativeRecoilPersistGate,
+} from 'react-native-recoil-persist';
 import {RecoilRoot} from 'recoil';
 
 import RootStackNavigator from './navigators';
@@ -24,9 +27,11 @@ function App() {
       <StatusBar barStyle="dark-content" />
       <QueryClientProvider client={queryClient}>
         <RecoilRoot>
-          <NavigationContainer initialState={initialState} ref={ref}>
-            <RootStackNavigator />
-          </NavigationContainer>
+          <ReactNativeRecoilPersistGate store={ReactNativeRecoilPersist}>
+            <NavigationContainer initialState={initialState} ref={ref}>
+              <RootStackNavigator />
+            </NavigationContainer>
+          </ReactNativeRecoilPersistGate>
         </RecoilRoot>
       </QueryClientProvider>
     </>

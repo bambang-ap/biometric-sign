@@ -15,5 +15,5 @@ export enum MenuList {
 export type RootStackParamList = {
   [RootStackList.Auth]: undefined;
   [RootStackList.Notes]: undefined;
-  [RootStackList.NoteDetail]: TNotes;
+  [RootStackList.NoteDetail]: undefined | TNotes;
 };

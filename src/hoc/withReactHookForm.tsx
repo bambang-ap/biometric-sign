@@ -11,7 +11,7 @@ import {
 } from 'react-hook-form';
 
 type DefaultProps = {
-  className?: string;
+  dClassName?: string;
 };
 
 export type ControlledComponentProps<

@@ -17,3 +17,9 @@ type ApiResponsePagination<T> = ApiResponse<{
   totalCount: number;
   data: T[];
 }>;
+
+declare namespace NodeJS {
+  interface ProcessEnv {
+    STORAGE_KEY: string;
+  }
+}
