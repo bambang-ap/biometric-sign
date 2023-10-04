@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
 import {FlashList} from '@shopify/flash-list';
 import {useRecoilValue} from 'recoil';
@@ -28,6 +28,11 @@ export default function NotesScreen() {
     <AppScreen>
       <FlashList
         data={data}
+        ListEmptyComponent={
+          <Text className="text-black">
+            Noting to see here, please add some notes
+          </Text>
+        }
         renderItem={({item}) => {
           return <Notes {...item} onPress={() => navigate(item)} />;
         }}

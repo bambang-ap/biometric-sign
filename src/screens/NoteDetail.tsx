@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {Button, View} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 
 import moment from 'moment';
 import {useForm} from 'react-hook-form';
@@ -74,8 +75,12 @@ export default function NoteDetail() {
         dClassName="hidden"
         defaultValue={moment().format(FORMAT_DATE)}
       />
-      <View className="flex-row items-center justify-between">
-        <Icon name="chevron-left" className="text-lg" onPress={goBack} />
+      <View className="flex-row h-10 items-center justify-between">
+        <TouchableOpacity
+          onPress={goBack}
+          className="w-5 h-5 items-center justify-center">
+          <Icon name="chevron-left" className="text-black text-lg" />
+        </TouchableOpacity>
         <Input
           placeholder="Title"
           dClassName="flex-1 mx-2"

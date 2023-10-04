@@ -35,14 +35,20 @@ export default function Notes({id, title, notes, date, onPress}: NotesProps) {
         <Text
           numberOfLines={1}
           ellipsizeMode="clip"
-          className="font-bold text-lg">
+          className="text-black font-bold text-lg">
           {title}
         </Text>
-        <Text className="text-justify">{notes}</Text>
+        <Text className="text-black text-justify">{notes}</Text>
       </View>
       <View className="flex-row items-center">
-        <Icon className="text-sm" name="trash" onPress={deleteNote} />
-        <Text className="flex-1 text-right font-semibold" numberOfLines={1}>
+        <Icon
+          className="text-black text-sm"
+          name="trash"
+          onPress={deleteNote}
+        />
+        <Text
+          className="text-black flex-1 text-right font-semibold"
+          numberOfLines={1}>
           {moment(date).format(FORMAT_DATE_VIEW)}
         </Text>
       </View>

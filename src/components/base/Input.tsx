@@ -2,6 +2,7 @@ import React from 'react';
 import {TextInput, View} from 'react-native';
 
 import {FieldValues} from 'react-hook-form';
+import twColors from 'tailwindcss/colors';
 
 import {InputProps} from '@appTypes/propsType.type';
 import {
@@ -25,11 +26,7 @@ function InputComponent<F extends FieldValues>(
   } = controller;
 
   return (
-    <View
-      className={classNames(
-        'border border-black px-2 py-1 rounded-lg',
-        className,
-      )}>
+    <View className={classNames('border border-black rounded-lg', className)}>
       <TextInput
         {...field}
         value={value}
@@ -37,7 +34,9 @@ function InputComponent<F extends FieldValues>(
         autoFocus={autoFocus}
         onChangeText={onChange}
         placeholder={placeholder}
-        className="flex-1"
+        className="text-black"
+        style={{includeFontPadding: false}}
+        placeholderTextColor={twColors.gray[300]}
       />
     </View>
   );

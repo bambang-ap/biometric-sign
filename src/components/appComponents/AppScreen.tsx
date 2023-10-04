@@ -6,7 +6,7 @@ import {classNames} from '@utils';
 
 export default function AppScreen({children, className}: AppScreenProps) {
   return (
-    <SafeAreaView className={classNames('flex-1', className)}>
+    <SafeAreaView className={classNames('flex-1 bg-white', className)}>
       <View className="flex-1 px-2 pt-2">{children}</View>
     </SafeAreaView>
   );
